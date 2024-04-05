@@ -7,7 +7,7 @@
 .main-nav {
     z-index:999;
     width: 100%;
-    background-color: $backgroundColor;
+    background-color: transparent;
     height: 0;
     overflow: hidden;
     visibility: hidden;
@@ -23,7 +23,7 @@
         @include flatten($is-list: true);
     }
     a {
-        color: $light;
+        color: $cloudwhite;
         text-decoration: none;
         display: block;
         line-height: 50px;
@@ -33,7 +33,7 @@
         &:hover,
         &:focus,
         &:active {
-            color:$yellow;
+            color:$darkgolden;
             border-bottom: 2px solid white;
         }
     }

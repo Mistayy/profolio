@@ -12,6 +12,9 @@
 @use './components/main-nav';
 @use './components/btn-main-nav';
 
+//pages
+@use './components/home';
+
 // Utilities
 @use './utilities/utility-classes';
 
