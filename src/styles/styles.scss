@@ -1,0 +1,21 @@
+// Imports
+
+// Resets
+@use './base/reset';
+@use './base/type';
+
+//components
+@use './components/header';
+@use './components/footer';
+@use './components/body';
+@use './components/main';
+@use './components/main-nav';
+@use './components/btn-main-nav';
+
+// Utilities
+@use './utilities/utility-classes';
+
+// Google Fonts - Import
+@import url('https://fonts.googleapis.com/css?family=Alatsi|Roboto:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');

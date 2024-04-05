@@ -1,0 +1,21 @@
+// Main
+
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+
+main {
+    padding: $section-padding;
+    min-height: calc(100vh - ($header-height + $footer-height));
+    section{
+        padding:0 10px;
+        @media (min-width: em(800)){
+            padding:0 20px;
+        }
+
+    }
+
+    a, a:focus, a:active,a:hover{
+        text-decoration: none;
+        outline:none;
+    }
+}

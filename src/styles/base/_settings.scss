@@ -1,0 +1,25 @@
+// App Style Settings
+
+@use '../utilities/functions' as *;
+
+// Colors
+$dark: #1c1c1c;
+$light: #fcfcfc;
+$yellow: #FEC34D;
+$grey: #e1e1e1;
+$red: #d75b5b;
+$backgroundColor:#15151b;
+
+// Type
+$bodyFont: 'Roboto', sans-serif;
+$headingFont: 'Bagel Fat One', sans-serif;
+$movieTitleFont: 'Rozha One',serif;
+
+
+
+$footer-height: 65px;
+$header-height: 70px;
+$border-radius:5%;
+
+// Layout
+$section-padding: em(16) em(20);
