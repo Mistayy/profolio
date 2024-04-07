@@ -1,5 +1,6 @@
 
 export const appTitle = 'Wizlen';
+export const restBase = 'http://localhost:8888/liwen-profolio/wp-json/wp/v2/';
 export const handleSlideChange = (currentSlide) => {
   // Change background color based on the current slide index
   if (currentSlide === 0) {
@@ -13,3 +14,8 @@ export const handleSlideChange = (currentSlide) => {
       document.body.style.backgroundColor = 'rgb(255, 170, 0)';
   }
 };
+
+// Function to reset background color to default (black)
+export function resetBackgroundColor() {
+  document.body.style.backgroundColor = '#4B4947';
+}

@@ -1,0 +1,85 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.decreativLine {
+    position:absolute;
+    border-left: 2px solid #f8f8f8; /* Adjust as needed */
+    height: 80vh;
+    left: 200px; /* Distance from left */
+    top:300px;
+}
+.image-wrapper{
+    display:flex;
+    height: 50px;
+    width:50px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border:2px solid $neonPink;
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+.image-wrapper img{
+    max-width: 100%; 
+    max-height: 100%; 
+    margin:auto;
+
+
+}
+.skill{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:5px;
+}
+.skill-wrapper{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:30px;
+    margin-left:230px;
+    margin-top:50px;
+    
+}
+
+//collapsible
+.Collapsible{
+    margin:50px 10px;
+}
+.Collapsible__trigger{
+    font-size: 50px;
+    font-family: $roadRage;
+    border:2px white solid;
+    color:white;
+    padding:10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin:20px;
+}
+
+//timeline
+
+.vertical-timeline-element {
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    .vertical-timeline-element-content{
+        background-color: rgb(120, 120, 120);
+        border-radius: 30px;
+        box-shadow: 0px 4px 0 $cloudwhite;
+        h3,h4,p{
+            color:$cloudwhite;
+        }
+        .vertical-timeline-element-content-arrow{
+            border-right:7px solid rgb(120, 120, 120);
+        }
+    }
+  }
+  
+  .vertical-timeline-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }

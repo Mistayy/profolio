@@ -52,7 +52,7 @@
             font-size:30px;
             color:$cloudwhite; 
             text-transform: uppercase;
-            font-family: "Road Rage", sans-serif;
+            font-family: $roadRage;
             @media (min-width: em(600)){
                 font-size:40px;
             }

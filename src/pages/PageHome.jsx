@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { appTitle ,handleSlideChange} from '../globals/globals.jsx';
+import { appTitle ,handleSlideChange,resetBackgroundColor} from '../globals/globals.jsx';
 import Loading from '../components/Loading';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,6 +9,7 @@ const Home = ( ) => {
 
     useEffect(() => {
         document.title = `${appTitle} - Home`;
+        resetBackgroundColor();
     }, []);
 
     const [isLoaded, setLoadStatus] = useState(true)
