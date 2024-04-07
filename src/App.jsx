@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 
 //pages
 import Home from './pages/PageHome'
+import About from './pages/PageAbout';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <main id="main">
           <Routes>
             <Route path='/' element={<Home restBase={restBase} />} />
+            <Route path='/about' element={<About restBase={restBase} />} />
           </Routes>
         </main>
         <Footer />
