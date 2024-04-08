@@ -5,17 +5,17 @@ export const handleSlideChange = (currentSlide) => {
   // Change background color based on the current slide index
   if (currentSlide === 0) {
       document.body.classList.add('color-transition')
-      document.body.style.backgroundColor = '#4B4947';
+      document.body.style.backgroundColor = '#4B4947';//grey
   } else if (currentSlide === 1) {
       document.body.classList.add('color-transition')
-      document.body.style.backgroundColor = '#ECA3C7';
+      document.body.style.backgroundColor = '#5E6C5B';//green
   } else {
       document.body.classList.add('color-transition')
-      document.body.style.backgroundColor = 'rgb(255, 170, 0)';
+      document.body.style.backgroundColor = '#E9A1B9';//pink
   }
 };
 
 // Function to reset background color to default (black)
-export function resetBackgroundColor() {
-  document.body.style.backgroundColor = '#4B4947';
+export function resetBackgroundColor(color) {
+  document.body.style.backgroundColor = color;
 }

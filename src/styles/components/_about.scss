@@ -2,12 +2,12 @@
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
 
-.decreativLine {
-    position:absolute;
-    border-left: 2px solid #f8f8f8; /* Adjust as needed */
-    height: 80vh;
-    left: 200px; /* Distance from left */
-    top:300px;
+hr{
+    width:30%;
+    margin:10px 5px auto 0;
+    margin-bottom: 10px;
+
+
 }
 .image-wrapper{
     display:flex;
@@ -16,7 +16,7 @@
     background-color: white;
     align-items: center;
     justify-content: center;
-    border:2px solid $neonPink;
+    border:2px solid $cloudwhite;
     border-radius: 10px; 
     overflow: hidden; 
 }
@@ -24,15 +24,15 @@
     max-width: 100%; 
     max-height: 100%; 
     margin:auto;
-
-
 }
+
 .skill{
     display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap:5px;
+    width: 80px;
 }
 .skill-wrapper{
     display:flex;
@@ -40,9 +40,8 @@
     align-items: center;
     flex-wrap: wrap;
     gap:30px;
-    margin-left:230px;
+    margin-left:30px;
     margin-top:50px;
-    
 }
 
 //collapsible
@@ -52,12 +51,17 @@
 .Collapsible__trigger{
     font-size: 50px;
     font-family: $roadRage;
-    border:2px white solid;
+    border:none;
     color:white;
     padding:10px 15px;
     cursor: pointer;
     border-radius: 20px;
     margin:20px;
+}
+.Collapsible__contentOuter{
+    margin:10px;
+    background-color: #d6d4ad52;
+    border-radius: 20px;
 }
 
 //timeline
@@ -67,14 +71,14 @@
     transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     .vertical-timeline-element-content{
-        background-color: rgb(120, 120, 120);
+        background-color: #d6d4ad52;
         border-radius: 30px;
         box-shadow: 0px 4px 0 $cloudwhite;
         h3,h4,p{
             color:$cloudwhite;
         }
         .vertical-timeline-element-content-arrow{
-            border-right:7px solid rgb(120, 120, 120);
+            border-right:7px solid #d6d4ad52;
         }
     }
   }

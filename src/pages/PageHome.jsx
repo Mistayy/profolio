@@ -9,7 +9,7 @@ const Home = ( ) => {
 
     useEffect(() => {
         document.title = `${appTitle} - Home`;
-        resetBackgroundColor();
+        resetBackgroundColor('#4B4947');
     }, []);
 
     const [isLoaded, setLoadStatus] = useState(true)
