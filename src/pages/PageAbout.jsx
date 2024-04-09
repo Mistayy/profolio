@@ -21,6 +21,7 @@ const About = () => {
         { isLoaded ?
             <div className="wrapper">
                 <h2>About Me</h2><hr></hr>
+                <div className='portrait'></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
                 <h2>Skill Set</h2><hr></hr>
                 <SkillList />

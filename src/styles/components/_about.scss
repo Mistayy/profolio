@@ -9,6 +9,14 @@ hr{
 
 
 }
+
+.portrait{
+    width:600px;
+    height:850px;
+    background-image: url('src/images/portrait.png');
+    background-size: cover;
+}
+
 .image-wrapper{
     display:flex;
     height: 50px;

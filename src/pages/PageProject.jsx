@@ -8,7 +8,7 @@ const Project = ( ) => {
 
     useEffect(() => {
         document.title = `${appTitle} - Project`;
-        resetBackgroundColor('#5E6C5B');    
+        resetBackgroundColor('#4B4947');    
     })
 
     
