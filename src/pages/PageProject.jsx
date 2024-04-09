@@ -1,34 +1,26 @@
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
+import ProjectCard from '../components/ProjectCard'
+import { appTitle, resetBackgroundColor } from '../globals/globals';
 
-const Project = ( {restBase} ) => {
-    const restPath = restBase;
-    const [restData, setData] = useState([])
-    const [isLoaded, setLoadStatus] = useState(false)
+const Project = ( ) => {
+
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(restPath)
-            if ( response.ok ) {
-                const data = await response.json()
-                setData(data)
-                setLoadStatus(true)
-            } else {
-                setLoadStatus(false)
-            }
-        }
-        fetchData()
-    }, [restPath])
+        document.title = `${appTitle} - Project`;
+        resetBackgroundColor('#5E6C5B');    
+    })
+
     
     return (
         <>
-        { isLoaded ?
-            <h2>Project</h2>
-        : 
-            <Loading /> 
-        }
+            <div>
+                <ProjectCard id={72} title="Telus Copper to Fiber migration" 
+                featureUrl='http://localhost:8888/liwen-profolio/wp-content/uploads/2024/04/movieDbF.png'
+                alt='testimg' />
+            </div>
         </>            
     )
 }
 
-export default Home
+export default Project
