@@ -1,0 +1,134 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.img-showing{
+    padding:10px;
+    margin-bottom: 30px;
+
+    .detail-feature{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+}
+.skill-section{
+    display:flex;
+    flex-direction: column;
+    margin-left:-1.25em;
+    gap:10px;
+    background-color: $lightgreen;
+    width:100vw;
+
+    .title-wrapper{
+        width:80%;
+        text-align: center;
+        margin:10px auto;
+        border-bottom: 2px white dotted;
+        h2{
+            font-size:55px;
+            font-family: $roadRage;
+            padding:0;
+            margin:0;
+        }
+    }
+
+
+    .skill-gallery{
+        width:80%;
+        padding:50px;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:10px;
+    }
+}
+
+.overall-view{
+    margin-left:-1.25em;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    gap:80px;
+
+    .right{
+        display:flex;
+        flex-direction: column;
+        align-content: flex-start;
+        width:50%;
+        margin-left:80px;
+        h2{
+            padding:0;
+            margin:0;
+            font-size: 80px;
+            text-shadow: 2px 2px black;
+        }
+        h3{
+            color:$neonPink;
+            font-size:25px;
+            font-style: italic;
+            margin-left:50px;
+            font-weight: 300;
+            margin:10px 15px;
+            text-shadow: 2px 2px black;
+        }
+    }
+    .left{
+        display:flex;
+        flex-direction: column-reverse;
+        align-content: flex-start;
+        width:50%;
+        padding:20px;
+        margin:auto;
+        margin-right:100px;
+        p{
+            font-size: 25px;
+        }
+        a{
+            font-size: 40px;
+            background-color: $cloudwhite;
+            color:$matblack;
+            text-align: center;
+            padding:20px 0;
+            margin:0 20px;
+            border:$cloudwhite 3px solid;
+        }
+        a:hover{
+            background-color: $matblack;
+            color:$cloudwhite;
+        }
+    }
+
+
+    h2,h3,p{
+        color:$cloudwhite;
+        font-family: $bodyFont;
+    }
+}
+
+.detail-meta-wrapper{
+    padding:10px;
+    padding-top:50px;
+
+
+    .detail-article{
+        display:flex;
+        flex-direction: row;
+        gap:140px;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        h3{
+            font-size:100px;
+            font-family: $roadRage;
+            color:$neonPink
+        }
+
+        p{
+            font-size: 25px;
+            font-family: $bodyFont;
+            width:800px;
+        }
+    }
+}

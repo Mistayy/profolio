@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Loading from '../components/Loading'
 import ProjectCard from '../components/ProjectCard'
 import { appTitle, resetBackgroundColor } from '../globals/globals';
 
@@ -15,7 +14,7 @@ const Project = ( ) => {
     return (
         <>
             <div>
-                <ProjectCard id={72} title="Telus Copper to Fiber migration" 
+                <ProjectCard id={41} title="Telus Copper to Fiber migration" 
                 featureUrl='http://localhost:8888/liwen-profolio/wp-content/uploads/2024/04/movieDbF.png'
                 alt='testimg' />
             </div>

@@ -1,27 +1,131 @@
-import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom';
-import ProjectCard from '../components/ProjectCard'
-import { appTitle, resetBackgroundColor } from '../globals/globals';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { resetBackgroundColor, restBase,appTitle } from '../globals/globals';
+import SkillCard from '../components/SkillCard';
 
 const ProjectDetail = () => {
     const { id } = useParams();
-
+    const [restData, setData] = useState({});
+    const [skillsData, setSkillsData] = useState([]);
 
     useEffect(() => {
         document.title = `${appTitle} - ProjectDetail`;
         resetBackgroundColor('#4B4947');    
-    })
+    }, []);
 
-    
+    useEffect(() => {
+        const fetchData = async () => {
+            const url = restBase + 'fwd-projects/' + id + '?acf_format=standard';
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                setData(data);
+            }
+            // TODO: Error handling
+        };
+        fetchData();
+    }, [id]);
+
+    useEffect(() => {
+        const fetchSkillsData = async () => {
+            const skills = restData.acf?.skills || [];
+            const skillsPromises = skills.map(async (skill) => {
+                const url = restBase + 'fwd-skills/' + skill.ID + '?acf_format=standard&_fields=id,acf.skill-logo.url,acf.skill-name,acf.skill-class';
+                const response = await fetch(url);
+                if (response.ok) {
+                    return await response.json();
+                } else {
+                    // Handle error
+                    console.error('Error fetching data for skill with ID:', skill.ID);
+                    return null;
+                }
+            });
+
+            const skillsData = await Promise.all(skillsPromises);
+            setSkillsData(skillsData.filter(skill => skill !== null));
+        };
+
+        if (restData.acf?.skills) {
+            fetchSkillsData();
+        }
+    }, [restData]);
+
+    const metaList = [
+        {
+            'name': 'HighLight',
+            'content': restData.acf ? restData.acf["project-highlight"] : ''
+        },
+        {
+            'name': 'Reflection',
+            'content': restData.acf ? restData.acf["project-reflection"] : ''
+        }
+    ];
+
     return (
-        <>
-            <div>
-                <ProjectCard id={id} title="Telus Copper to Fiber migration" 
-                featureUrl='http://localhost:8888/liwen-profolio/wp-content/uploads/2024/04/movieDbF.png'
-                alt='testimg' />
+        <div className='detail-wrapper'>
+            <div className='img-showing'>
+                {restData.acf ? (
+                    restData.acf['img-gallery'] ? (
+                        <div className="detail-gallery">
+                            <img src={restData.acf['feature-image']} alt="Feature Image" />
+                        </div>
+                    ) : (
+                        restData.acf['feature-image'] ? (
+                            <div className='detail-feature'>
+                                <img src={restData.acf['feature-image']} alt="Feature Image" />
+                            </div>
+                        ) : null
+                    )
+                ) : null}
             </div>
-        </>            
-    )
+
+            
+            {restData.acf?
+                (
+
+                    <div className="overall-view">
+                        <div className="right">
+                            <h2>{restData.acf['project-title']}</h2>
+                            <h3 className='type'>{restData.acf.type}, {restData.acf.time}</h3>
+                            <h3 className='company'>{restData.acf.company}</h3>
+                        </div>
+                        <div className="left">
+                            {restData.acf.livesite ? (
+                                <a href={restData.acf.livesite}>Live Site</a>
+                            ) : null}
+                            <p>{restData.acf['project-introduction']}</p>
+                        </div>
+
+                    
+                    </div>
+                )
+                    : null
+            }
+            
+
+                <div className='skill-section'>
+                        <div className="title-wrapper">
+                            <h2>Skill Set 🛠</h2>
+                        </div>
+                        <div className='skill-gallery'>
+                            {skillsData.map(skill => (
+                                <SkillCard
+                                    key={skill.id}
+                                    skillName={skill.acf['skill-name']}
+                                    skillLogoUrl={skill.acf['skill-logo'].url} />
+                            ))}
+                        </div>
+                </div>
+                <div className='detail-meta-wrapper'>
+                    {metaList.map((section, index) => (
+                        <article key={index} className='detail-article'>
+                            <h3 className='section-name'>{section.name}</h3>
+                            <p className='section-content'>{section.content}</p>
+                        </article>
+                    ))}
+                </div>
+        </div>
+    );
 }
 
 export default ProjectDetail;
