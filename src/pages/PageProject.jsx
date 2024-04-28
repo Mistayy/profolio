@@ -1,25 +1,93 @@
-import { useState, useEffect } from 'react'
-import ProjectCard from '../components/ProjectCard'
-import { appTitle, resetBackgroundColor } from '../globals/globals';
+import { useState, useEffect } from 'react';
+import ProjectCard from '../components/ProjectCard';
+import { appTitle, resetBackgroundColor ,restBase} from '../globals/globals';
 
-const Project = ( ) => {
 
+const Project = () => {
+    const [frontEndData, setFrontEndData] = useState([]);
+    const [backEndData, setBackEndData] = useState([]);
 
     useEffect(() => {
         document.title = `${appTitle} - Project`;
-        resetBackgroundColor('#4B4947');    
-    })
+        //#4B4947
+        resetBackgroundColor('#4B4947');
+    }, []);
 
-    
-    return (
-        <>
-            <div>
-                <ProjectCard id={41} title="Telus Copper to Fiber migration" 
-                featureUrl='http://localhost:8888/liwen-profolio/wp-content/uploads/2024/04/movieDbF.png'
-                alt='testimg' />
+    useEffect(() => {
+        const fetchFrontEndData = async () => {
+            const url = restBase + 'fwd-projects/' + '?acf_format=standard&_fields=acf.project-title, acf.type,id,acf.feature-image,&fwd-project-category=4';
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                setFrontEndData(data);
+            }
+            // TODO: Error handling
+        };
+        fetchFrontEndData();
+    }, []);
+
+    useEffect(() => {
+        const fetchBackEndData = async () => {
+            const url = restBase + 'fwd-projects/' + '?acf_format=standard&_fields=acf.project-title, acf.type,id,acf.feature-image,&fwd-project-category=5';
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                setBackEndData(data);
+            }
+            // TODO: Error handling
+        };
+        fetchBackEndData();
+    }, []);
+
+    const renderCards = (data) => {
+        return (
+            <div className="card-container">
+                {data.map((project) => (
+                    <div key={project.id} className="card">
+                        <ProjectCard
+                            id={project.id}
+                            title={project.acf['project-title']}
+                            featureUrl={project.acf['feature-image']}
+                            alt="Project Image"
+                        />
+                    </div>
+                ))}
+                {data.map((project) => (
+                    <div key={project.id} className="card">
+                        <ProjectCard
+                            id={project.id}
+                            title={project.acf['project-title']}
+                            featureUrl={project.acf['feature-image']}
+                            alt="Project Image"
+                        />
+                    </div>
+                ))}
             </div>
-        </>            
-    )
-}
+        );
+    };
+    return (
 
-export default Project
+        <div className="project-wrapper">
+            <div className="front-end-section">
+                <div className="category-intro">
+                    <h1>01</h1>
+                    <h2>Front-end web development</h2>
+                    <hr />
+                    <p>From responsive layouts to seamless animations, each project reflects my dedication to blending aesthetics with functionality. Let's bring ideas to life, one click at a time.</p> 
+                </div>
+                {renderCards(frontEndData)}
+            </div>
+            <div className="back-end-section">
+                <div className="category-intro">
+                <h1>02</h1>
+                <h2>Back-end web development</h2>
+                <p>Explore projects showcasing my expertise in scalable solutions and elegant database designs. Join me as we engineer the backbone of tomorrow's digital experiences.</p>
+                </div>
+                {renderCards(backEndData)}
+            </div>
+            
+        </div>
+    );
+};
+
+export default Project;
