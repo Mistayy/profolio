@@ -14,10 +14,9 @@ import ProjectDetail from './pages/PageProjectDetail';
 
 function App() {
   
-  const restBase = 'http://localhost:8888/liwen-profolio/wp-json/wp/v2/'
 
   return (
-    <Router basename="/">
+    <Router basename="/profolio">
       <div className="site-wrapper">
         <Header />
         <main id="main">
