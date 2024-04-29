@@ -38,5 +38,5 @@ jobs:
           server: giow1087.siteground.us
           username: adminz@liwenzhuang.com
           key: _*rg3c1&[1F1
-          local-dir: /home/runner/work/profolio/profolio/dist
+          local-dir: /home/runner/work/profolio/profolio/dist/
           server-dir: /
