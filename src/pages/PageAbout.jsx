@@ -20,13 +20,41 @@ const About = () => {
         <>
         { isLoaded ?
             <div className="wrapper">
-                <h2>About Me</h2><hr></hr>
-                <div className='portrait'></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                <h2>Skill Set</h2><hr></hr>
-                <SkillList />
-                <h2>My experience</h2><hr></hr>
-                <Timeline />
+                <div className="brief">
+                    <div className="left">
+                        <h1>01</h1>
+                        <h2>About Me</h2><hr></hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                    </div>
+                    <div className="right">
+                       <div className='portrait'></div>  
+                    </div>
+                </div>
+                <div className="skillset">
+                    <div className="left">
+                        <h1>02</h1>
+                        <h2>Skill Set</h2><hr></hr>
+                    </div>
+                    <div className="right">
+                        <SkillList />
+                    </div>
+                </div>
+                <div className="experience">
+                    <div className="left">
+                        <h1>03</h1>
+                        <h2>My experience</h2><hr></hr>
+                    </div>
+                    <div className="right">
+                        <Timeline />
+                    </div> 
+                </div>
+                <div className="Contact">
+                    <h2>Contact Me</h2>
+                    <p>Let's keep in touch!</p>
+                    
+                </div>
+                
+
 
           </div>
         : 

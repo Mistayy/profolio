@@ -13,7 +13,7 @@ const Footer = () => (
                 <img src={logoImage} alt="Logo" />
             </Link>
         </section>
-        <p>&copy; {getYear()} | FWD | Liwen Zhuang</p>
+        <p>&copy; {getYear()} | Liwen Zhuang</p>
         <section className="social-media">
             <a href="#"><img src={instaImage} alt='instagramIcon'/></a>
             <a href="#"><img src={twitterImage} alt='twitterIcon'/></a>

@@ -9,7 +9,6 @@ const Header = () => {
     const [showNav, setShowNav] = useState(false);
 
     const toggleNav = () => {
-        console.log('toggleNav');
         setShowNav(!showNav);
     }
 

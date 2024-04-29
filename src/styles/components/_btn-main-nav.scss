@@ -29,27 +29,12 @@
         margin: 8px auto;
         transition: all 0.3s ease-in-out;
 
-        .show &:nth-child(2){
-            width: 0;
-        }
-
-        .show &:nth-child(1), .btn-main-nav.show .line:nth-child(3){
-            transition-delay: 0.3s;
-        }
-
         .show &:nth-child(1){
-            transform: translateY(13px);
-        }
-
-        .show &:nth-child(3){
-            transform: translateY(-13px) rotate(90deg);
-        }
-
     }
       
     .show & {
         transition: all 0.3s ease-in-out;
-        transition-delay: 0.6s;
+        transition-delay: 0.2s;
         transform: rotate(45deg);
     }
 
