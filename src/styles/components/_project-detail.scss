@@ -65,7 +65,7 @@
             text-shadow: 2px 2px black;
         }
         h3{
-            color:$neonPink;
+            color:$cloudwhite;
             font-size:25px;
             font-style: italic;
             margin-left:50px;
@@ -114,21 +114,31 @@
 
     .detail-article{
         display:flex;
-        flex-direction: row;
-        gap:140px;
+        flex-direction: column;
+        @media (min-width: em(900)){
+            flex-direction: row;
+            justify-content: space-around;
+          }
         justify-content: center;
         margin-bottom: 50px;
-
         h3{
-            font-size:100px;
+            width:40%;
+            font-size:70px;
             font-family: $bodyFont;
             color:$neonPink
         }
 
+
         p{
             font-size: 25px;
             font-family: $bodyFont;
-            width:800px;
+            width:100%;
+            @media (min-width: em(900)){
+                width:60%;
+            }
+            
+            margin:auto 10px;
+            margin-left:0;
         }
     }
 }
