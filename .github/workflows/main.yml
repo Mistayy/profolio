@@ -37,6 +37,6 @@ jobs:
         with:
           server: giow1087.siteground.us
           username: profolio@liwenzhuang.com
-          password: _*rg3c1&[1F1
+          password: ${{ secrets.SITEGROUNDPASSWORD }}
           local-dir: /home/runner/work/profolio/profolio/dist/
           server-dir: /
