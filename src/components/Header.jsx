@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import logoImage from "../images/logo.svg";
 import React from 'react';
+import burgerImage from '../images/burger.svg';
 
 const Header = () => {
 
