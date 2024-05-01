@@ -4,6 +4,7 @@ import Loading from '../components/Loading'
 import 'react-vertical-timeline-component/style.min.css';
 import Timeline from '../components/Timeline';
 import SkillList from '../components/SkillList';
+import facebookImage from '../images/portrait.png';
 
 const About = () => {
 
@@ -27,7 +28,7 @@ const About = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
                     </div>
                     <div className="right">
-                       <div className='portrait'></div>  
+                       <div className='portrait' style={{backgroundImage: `url(${facebookImage})`,}}></div>  
                     </div>
                 </div>
                 <div className="skillset">
