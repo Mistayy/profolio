@@ -4,6 +4,8 @@ import Loading from '../components/Loading';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import patternImage from '../images/pattern.png';
+
 
 const Home = ( ) => {
 
@@ -32,7 +34,7 @@ const Home = ( ) => {
               color:"transparent",
               border: "3px white solid",
               borderRadius:"50%",
-              backgroundImage: "url('/src/images/pattern.png')",
+              backgroundImage: `url(${patternImage})`,
               backgroundSize: "cover"
             }}
           >
