@@ -2,9 +2,9 @@ import React from 'react';
 import { getYear } from '../utilities/utilities';
 import { Link } from 'react-router-dom'; 
 import logoImage from '../images/logo.svg';
-import instaImage from '../images/insta.png';
-import twitterImage from '../images/twitter.png';
-import facebookImage from '../images/facebook.png';
+import githubLogo from '../images/codepenlogo.svg';
+import codepenLogo from '../images/emaillogo.svg';
+import emailLogo from '../images/githublogo.svg';
 
 const Footer = () => (
     <footer>
@@ -15,9 +15,9 @@ const Footer = () => (
         </section>
         <p>&copy; {getYear()} | Liwen Zhuang</p>
         <section className="social-media">
-            <a href="#"><img src={instaImage} alt='instagramIcon'/></a>
-            <a href="#"><img src={twitterImage} alt='twitterIcon'/></a>
-            <a href="#"><img src={facebookImage} alt='facebbokIcon'/></a>
+            <a href="#"><img src={githubLogo} alt='instagramIcon'/></a>
+            <a href="#"><img src={codepenLogo} alt='twitterIcon'/></a>
+            <a href="#"><img src={emailLogo} alt='facebbokIcon'/></a>
         </section>
             
     </footer>

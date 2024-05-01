@@ -51,13 +51,13 @@
             text-align: center;
             font-size:28px;
             color:$cloudwhite; 
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-family: $bodyFont;
             @media (min-width: em(600)){
-                font-size:40px;
+                font-size:35px;
             }
             @media (min-width: em(1100)){
-                font-size:50px;
+                font-size:45px;
             }
         }
     }
@@ -80,7 +80,7 @@
 
     }
     .content h1 {
-        font-size:45px;
+        font-size:43px;
         color:$cloudwhite; 
         text-transform: uppercase;
         margin:0 auto;

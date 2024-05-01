@@ -37,8 +37,8 @@
         &:hover,
         &:focus,
         &:active {
-            color:transparent;
-            -webkit-text-stroke: 2px $cloudwhite;
+            color:$neonPink;
+            // -webkit-text-stroke: 2px $cloudwhite;
             border-bottom: 2px solid white;
         }
     }
