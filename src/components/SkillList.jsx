@@ -26,7 +26,7 @@ const SkillList = () => {
         <>
             <div className="skillSet">
                 {Object.keys(categorizedSkillsRes).map(skillClass => (
-                    <Collapsible key={skillClass} trigger={skillClass + '  🔽'} open={true}>
+                    <Collapsible key={skillClass} trigger={skillClass} open={true}>
                         <div className="skill-wrapper">
                             {categorizedSkillsRes[skillClass].map(skill => (
                                 <div className='skill'>

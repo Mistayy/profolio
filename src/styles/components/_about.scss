@@ -3,6 +3,23 @@
 @use '../utilities/mixins' as *;
 
 .wrapper{
+    h1{
+        font-size:100px;
+        font-family: $bodyFont;
+        margin-bottom: 20px;
+        margin-top:50px;
+    }
+    h2{
+        font-size:60px;
+        @media (min-width: em(950)){
+            font-size:80px;
+        }
+        margin-bottom: 50px;
+        text-transform: capitalize;
+    }
+    p{
+        font-size:20px;
+    }
     .left{
         width:100%;
         @media (min-width: em(950)){
@@ -11,25 +28,6 @@
         color:white;
         margin-left:20px;
         padding-right:20px;
-        h1{
-            font-size:140px;
-            font-family: $bodyFont;
-            margin-bottom: 20px;
-            margin-top:50px;
-        }
-        h2{
-            font-size:80px;
-            margin-bottom: 50px;
-            text-transform: capitalize;
-        }
-        hr{
-            height:8px;
-            width:150px;
-            color:white;
-            background-color: white;
-            border:none;
-            margin-left:0px;
-        }
     }
     .right{
         width:100%;
@@ -103,7 +101,32 @@
               }
         }
     }
+
+    .contact{
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        .social-media{
+            width:100%;
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content: center;
+            gap:20px;
+            padding:10px 0;
+            a{
+                img{
+                    height:50px;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding:0 10px;
+                }
+
+            }
+        }
+    }
 }
+
 
 
 
@@ -135,24 +158,43 @@
 
 //collapsible
 .Collapsible{
-    margin:50px 10px;
+    margin:40px 10px;
 }
 .Collapsible__trigger{
-    font-size: 50px;
+    font-size: 35px;
+    @media (min-width: em(950)){
+        font-size: 50px;
+        padding:10px 15px;
+        margin:20px;
+      }
     font-family: $bodyFont;
     border:none;
     color:white;
-    padding:10px 15px;
     cursor: pointer;
-    border-radius: 20px;
-    margin:20px;
 }
 .Collapsible__contentOuter{
-    margin:10px;
+    @media (min-width: em(950)){
+        margin:10px;
+    }
     background-color: #d6d4ad52;
     border-radius: 20px;
 }
 
+.Collapsible__trigger::after{
+    content: "▼";
+    font-size:25px;
+    @media (min-width: em(950)){
+        font-size:35px;
+    }
+    color:gold;
+    float:right;
+    margin-right:15px;
+    margin-top:5px; 
+}
+
+.Collapsible__trigger.is-open::after{
+    content: "▲";
+}
 //timeline
 .vertical-timeline-element {
     opacity: 1;
