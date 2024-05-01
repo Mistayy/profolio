@@ -41,7 +41,6 @@ const Header = () => {
              * https://codepen.io/RRoberts/pen/ZBYaJr
              */}
             <button className="btn-main-nav"
-                    style={{backgroundImage: `url(${burgerImage})`}}
                     onMouseDown={(e) => { e.preventDefault(); }}
                     onClick={toggleNav}
                     >
