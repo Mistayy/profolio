@@ -81,6 +81,7 @@ const Project = () => {
                 <div className="category-intro">
                 <h1>02</h1>
                 <h2>Back-end web development</h2>
+                <hr />
                 <p>Explore projects showcasing my expertise in scalable solutions and elegant database designs. Join me as we engineer the backbone of tomorrow's digital experiences.</p>
                 </div>
                 {renderCards(backEndData)}

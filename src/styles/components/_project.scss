@@ -5,7 +5,6 @@
 .front-end-section,.back-end-section{
   display:flex;
   flex-direction: column;
-  min-height:90vh;
   height: max-content;
   margin-bottom: 50px;
   @media (min-width: em(1000)){
@@ -14,11 +13,13 @@
 
   .category-intro{
     width:100%;
-    @media (min-width: em(1100)){
+    padding-bottom: 30px;
+    @media (min-width: em(1000)){
       width:50%;
     }
     background-color: gold;
     h1{
+      text-transform: capitalize;
       font-size: 200px;
       font-family: $bodyFont;
       padding-left:20px;
@@ -29,12 +30,11 @@
       @media (min-width: em(650)){
         font-size: 60px;
       }
-      @media (min-width: em(1100)){
+      @media (min-width: em(1000)){
         font-size: 70px;
       }
       font-family: $bodyFont;
       color:black;
-      text-transform: capitalize;
       padding-left:20px;
       margin-bottom: 50px;
     }
@@ -56,27 +56,31 @@
   }
   .card-container{
     width:100%;
-    @media (min-width: em(1100)){
+    @media (min-width: em(1000)){
       width:50%;
+      flex-direction: column;
     }
     height: fit-content;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
 }
   
 .project-card {
-  width: 450px;
-  height: 280px;
+  max-width: 330px;
+  min-width: 300px;
+  @media (min-width: em(1000)){
+    max-width: 450px;
+  }
+  width:fit-content;
+  height: max-content;
   background-color: transparent;
   padding: 0px;
   margin:10px;
-  @media (min-width: em(1100)){
-    margin: 30px;
-  }
-  // border-radius: 20px;
   overflow: hidden;
 }
 
@@ -101,7 +105,10 @@
 }
 
 .project-image-wrapper {
-  width: 400px;
+  max-width: 330px;
+  @media (min-width: em(1000)){
+    max-width: 400px;
+  }
   padding-top: 15px;
   position: relative;
 }
@@ -117,7 +124,8 @@
 .link-wrap p {
   font-size: 20px;
   font-weight: 600;
-  width: 40%; /* Adjusted width to stretch across the full width */
+  text-transform: capitalize;
+  width: 40%; 
   position: absolute;
   bottom: 10px;
   padding: 5px 10px;
