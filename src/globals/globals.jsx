@@ -1,6 +1,6 @@
 
 export const appTitle = 'Wizlen';
-export const restBase = 'http://localhost:8888/liwen-profolio/wp-json/wp/v2/';
+export const restBase = 'https://liwenzhuang.com/wp-profolio/wp-json/wp/v2/';
 
 
 // Function to reset background color to default (black)
