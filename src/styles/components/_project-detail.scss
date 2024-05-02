@@ -15,10 +15,10 @@
 .skill-section{
     display:flex;
     flex-direction: column;
-    margin-left:-1.25em;
     gap:10px;
     background-color: $lightgreen;
-    width:100vw;
+    margin-right:calc(550px - 50vw);
+    margin-left:calc(550px - 50vw);
 
     .title-wrapper{
         width:80%;
