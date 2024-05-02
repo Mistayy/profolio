@@ -54,15 +54,15 @@ const Home = ( ) => {
                             <h1>Hi! I am Liwen</h1>
                             <h1>Hi! I am Liwen</h1>
                         </div>
-                        <p>I am a Full-Sack Web Application developer!</p>
+                        <p>I am a Web Application developer 👩‍💻</p>
                     </article>
                     <article className='slide-article'>
                         <h1>Full-Stack Developer</h1>
-                        <p>I posses a comprehensive understanding of full software development lifecycle.</p>
+                        <p>Comprehensive understanding of full website development lifecycle 👌</p>
                     </article >
                     <article className='slide-article'>
                         <h1 >Curious and Passionate</h1>
-                        <p >I love solving problems and I enjoy helping others out!</p>
+                        <p>Helping people solving problems brings me lots of joy 🎊</p>
                     </article>
                 </Slider>
             </div>

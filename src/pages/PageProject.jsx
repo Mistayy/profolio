@@ -52,16 +52,6 @@ const Project = () => {
                         />
                     </div>
                 ))}
-                {data.map((project) => (
-                    <div key={project.id} className="card">
-                        <ProjectCard
-                            id={project.id}
-                            title={project.acf['project-title']}
-                            featureUrl={project.acf['feature-image']}
-                            alt="Project Image"
-                        />
-                    </div>
-                ))}
             </div>
         );
     };

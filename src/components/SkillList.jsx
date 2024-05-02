@@ -9,7 +9,7 @@ const SkillList = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = restBase + 'fwd-skills?acf_format=standard&_fields=acf.skill-logo.url,acf.skill-name,acf.skill-class';
+            const url = restBase + 'fwd-skills?acf_format=standard&_fields=acf.skill-logo.url,acf.skill-name,acf.skill-class&per_page=100&order=asc';
             const response = await fetch(url);
             if (response.ok) {
                 const data = await response.json();
@@ -29,8 +29,8 @@ const SkillList = () => {
                     <Collapsible key={skillClass} trigger={skillClass} open={true}>
                         <div className="skill-wrapper">
                             {categorizedSkillsRes[skillClass].map(skill => (
-                                <div className='skill'>
-                                    <SkillCard key={skill.name} skillName={skill.name} skillLogoUrl={skill.logoUrl} />
+                                <div className='skill' key={skill.id}> {/* Use a unique identifier like skill.id */}
+                                    <SkillCard skillName={skill.name} skillLogoUrl={skill.logoUrl} />
                                 </div>
                             ))}
                         </div>
@@ -39,6 +39,7 @@ const SkillList = () => {
             </div>
         </>
     );
+    
 };
 
 export default SkillList;

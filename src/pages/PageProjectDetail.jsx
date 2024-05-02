@@ -120,7 +120,7 @@ const ProjectDetail = () => {
                     {metaList.map((section, index) => (
                         <article key={index} className='detail-article'>
                             <h3 className='section-name'>{section.name}</h3>
-                            <p className='section-content'>{section.content}</p>
+                            <p className='section-content' dangerouslySetInnerHTML={{ __html: section.content }}></p>
                         </article>
                     ))}
                 </div>

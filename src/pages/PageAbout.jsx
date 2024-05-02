@@ -28,7 +28,7 @@ const About = () => {
                     <div className="left">
                         <h1>01</h1>
                         <h2>About Me</h2><hr></hr>
-                        <p>Results-driven Full-Stack website and software developer with a medium-level expertise, offering a solid background in both Back-End and Front-End development. With 3 years of experience specializing in Back-End development followed by one year focusing on Front-End work, I possess a comprehensive understanding of the full software development lifecycle.</p>
+                        <p>I am a results-driven Full-Stack website and software developer. With 3 years of experience specializing in Back-End development followed by one year focusing on Front-End work, I possess a comprehensive understanding of the full software development lifecycle.</p>
                     </div>
                     <div className="right">
                        <div className='portrait' style={{backgroundImage: `url(${portraitImage})`,}}></div>  
