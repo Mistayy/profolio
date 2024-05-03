@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { resetBackgroundColor, restBase,appTitle } from '../globals/globals';
 import SkillCard from '../components/SkillCard';
+import Gallery from '../components/Gallery';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -64,25 +65,16 @@ const ProjectDetail = () => {
     return (
         <div className='detail-wrapper'>
             <div className='img-showing'>
-                {restData.acf ? (
-                    restData.acf['img-gallery'] ? (
-                        <div className="detail-gallery">
-                            <img src={restData.acf['feature-image']} alt="Feature Image" />
-                        </div>
-                    ) : (
-                        restData.acf['feature-image'] ? (
-                            <div className='detail-feature'>
-                                <img src={restData.acf['feature-image']} alt="Feature Image" />
-                            </div>
-                        ) : null
-                    )
-                ) : null}
+                
+                {restData.acf && restData.acf['img-gallery']?(
+                    <div className='detail-feature'>
+                        <img src={restData.acf['feature-image']} alt="Feature Image" />
+                    </div>
+                ):null}
             </div>
 
-            
             {restData.acf?
                 (
-
                     <div className="overall-view">
                         <div className="right">
                             <h2>{restData.acf['project-title']}</h2>
@@ -117,14 +109,25 @@ const ProjectDetail = () => {
                         </div>
                 </div>
             </div>
-                <div className='detail-meta-wrapper'>
-                    {metaList.map((section, index) => (
-                        <article key={index} className='detail-article'>
-                            <h3 className='section-name'>{section.name}</h3>
-                            <p className='section-content' dangerouslySetInnerHTML={{ __html: section.content }}></p>
-                        </article>
-                    ))}
-                </div>
+            <div className='gallery-showing'>
+                {restData.acf && restData.acf['img-gallery'] && restData.acf['img-gallery'].length > 0 ? (
+                    <div className="detail-gallery">
+                        <h2>Project Gallery View</h2>
+                        <Gallery
+                            content={restData.acf['img-gallery']}
+                        />
+                    </div>
+                ) : null}
+            </div>
+
+            <div className='detail-meta-wrapper'>
+                {metaList.map((section, index) => (
+                    <article key={index} className='detail-article'>
+                        <h3 className='section-name'>{section.name}</h3>
+                        <p className='section-content' dangerouslySetInnerHTML={{ __html: section.content }}></p>
+                    </article>
+                ))}
+            </div>
         </div>
     );
 }
