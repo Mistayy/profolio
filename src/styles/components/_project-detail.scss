@@ -13,39 +13,17 @@
     }
 }
 .skill-section{
-    display:flex;
-    flex-direction: column;
-    gap:10px;
-
-    .title-wrapper{
-        width:80%;
-        text-align: center;
-        margin:10px auto;
-        border-bottom: 2px white dotted;
-        h2{
-            font-size:35px;
-            @media (min-width: em(1000)){
-                font-size:55px;
-            }
-            font-family: $bodyFont;
-            padding:0;
-            margin:0;
-        }
-    }
-
-
+    border-top:2px solid $forestgreen;
+    border-bottom:2px solid $forestgreen;
+    padding-top:15px;
+    margin:auto 0;
     .skill-gallery{
-        width:80%;
-        max-width: 900px;
+        width:100%;
         margin:0 auto;
-        padding:20px;
         display:flex;
-        @media (min-width: em(1000)){
-            padding:50px;
-        }
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         gap:20px;
     }
 }
@@ -107,7 +85,10 @@
     
         
         p{
-            font-size: 25px;
+            font-size: 20px;
+            @media (min-width: em(1000)){
+                font-size: 25px;
+            }
         }
         a{
             font-size: 30px;
@@ -134,10 +115,20 @@
     }
 }
 .gallery-showing{
+    background-color: $forestgreen;
+
+    padding:30px;
+    margin:0 auto;
+    @media (min-width: em(1000)){
+        margin-left:-300px;
+        margin-right:-300px;
+    }
+
+}
+.detail-gallery{
     max-width:1000px;
     width:100%;
     margin:0 auto;
-    text-align: center;
     h2{
         font-size:35px;
         @media (min-width: em(1000)){
@@ -204,7 +195,10 @@
 
 
         p{
-            font-size: 25px;
+            font-size: 20px;
+            @media (min-width: em(1000)){
+                font-size: 25px;
+            }
             font-family: $bodyFont;
             width:100%;
             @media (min-width: em(1000)){

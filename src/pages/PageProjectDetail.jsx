@@ -80,6 +80,18 @@ const ProjectDetail = () => {
                             <h2>{restData.acf['project-title']}</h2>
                             <h3 className='type'>{restData.acf.type}, {restData.acf.time}</h3>
                             <h3 className='company'>{restData.acf.company}</h3>
+                            <div className="skill-section-wrapper">
+                            <div className='skill-section'>
+                                    <div className='skill-gallery'>
+                                        {skillsData.map(skill => (
+                                            <SkillCard
+                                                key={skill.id}
+                                                skillName={skill.acf['skill-name']}
+                                                skillLogoUrl={skill.acf['skill-logo'].url} />
+                                        ))}
+                                    </div>
+                            </div>
+                                            </div>
                         </div>
                         <div className="left">
                             {restData.acf.livesite ? (
@@ -87,38 +99,10 @@ const ProjectDetail = () => {
                             ) : null}
                             <p>{restData.acf['project-introduction']}</p>
                         </div>
-
-                    
                     </div>
                 )
                     : null
             }
-            
-            <div className="skill-section-wrapper">
-                <div className='skill-section'>
-                        <div className="title-wrapper">
-                            <h2>Skill Set 🛠</h2>
-                        </div>
-                        <div className='skill-gallery'>
-                            {skillsData.map(skill => (
-                                <SkillCard
-                                    key={skill.id}
-                                    skillName={skill.acf['skill-name']}
-                                    skillLogoUrl={skill.acf['skill-logo'].url} />
-                            ))}
-                        </div>
-                </div>
-            </div>
-            <div className='gallery-showing'>
-                {restData.acf && restData.acf['img-gallery'] && restData.acf['img-gallery'].length > 0 ? (
-                    <div className="detail-gallery">
-                        <h2>Project Gallery View</h2>
-                        <Gallery
-                            content={restData.acf['img-gallery']}
-                        />
-                    </div>
-                ) : null}
-            </div>
 
             <div className='detail-meta-wrapper'>
                 {metaList.map((section, index) => (
@@ -127,6 +111,15 @@ const ProjectDetail = () => {
                         <p className='section-content' dangerouslySetInnerHTML={{ __html: section.content }}></p>
                     </article>
                 ))}
+            </div>
+            <div className='gallery-showing'>
+                {restData.acf && restData.acf['img-gallery'] && restData.acf['img-gallery'].length > 0 ? (
+                    <div className="detail-gallery">
+                        <Gallery
+                            content={restData.acf['img-gallery']}
+                        />
+                    </div>
+                ) : null}
             </div>
         </div>
     );
