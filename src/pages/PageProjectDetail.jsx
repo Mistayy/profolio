@@ -102,7 +102,7 @@ const ProjectDetail = () => {
                     : null
             }
             
-
+            <div className="skill-section-wrapper">
                 <div className='skill-section'>
                         <div className="title-wrapper">
                             <h2>Skill Set 🛠</h2>
@@ -116,6 +116,7 @@ const ProjectDetail = () => {
                             ))}
                         </div>
                 </div>
+            </div>
                 <div className='detail-meta-wrapper'>
                     {metaList.map((section, index) => (
                         <article key={index} className='detail-article'>
