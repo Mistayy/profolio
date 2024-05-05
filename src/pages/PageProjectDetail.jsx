@@ -95,7 +95,7 @@ const ProjectDetail = () => {
                         </div>
                         <div className="left">
                             {restData.acf.livesite ? (
-                                <a href={restData.acf.livesite}>Live Site</a>
+                                <a href={restData.acf.livesite}><span>Live Site</span></a>
                             ) : null}
                             <p>{restData.acf['project-introduction']}</p>
                         </div>

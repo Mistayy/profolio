@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { appTitle, resetBackgroundColor ,restBase} from '../globals/globals';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 
 const Project = () => {
@@ -41,7 +45,7 @@ const Project = () => {
 
     const renderCards = (data) => {
         return (
-            <div className="card-container">
+            <div className="card-container" data-aos="fade-left" data-aos-duration="6000">
                 {data.map((project) => (
                     <div key={project.id} className="card">
                         <ProjectCard
@@ -59,16 +63,16 @@ const Project = () => {
 
         <div className="project-wrapper">
             <div className="front-end-section">
-                <div className="category-intro">
+                <div className="category-intro" data-aos="fade-right" data-aos-duration="5000">
                     <h1>01</h1>
                     <h2>Front-end web development</h2>
                     <hr />
                     <p>From responsive layouts to seamless animations, each project reflects my dedication to blending aesthetics with functionality. Let's bring ideas to life, one click at a time.</p> 
                 </div>
-                {renderCards(frontEndData)}
+                    {renderCards(frontEndData)}
             </div>
             <div className="back-end-section">
-                <div className="category-intro">
+                <div className="category-intro" data-aos="fade-left">
                 <h1>02</h1>
                 <h2>Back-end web development</h2>
                 <hr />

@@ -7,6 +7,10 @@ import SkillList from '../components/SkillList';
 import portraitImage from '../images/portrait.png';
 import codePenImage from '../images/codePen.png';
 import gitHubImage from '../images/github.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 
 const About = () => {
@@ -25,36 +29,36 @@ const About = () => {
         { isLoaded ?
             <div className="wrapper">
                 <div className="brief">
-                    <div className="left">
+                    <div className="left" data-aos="fade-right">
                         <h1>01</h1>
                         <h2>About Me</h2><hr></hr>
                         <p>I am a results-driven Full-Stack website and software developer. With 3 years of experience specializing in Back-End development followed by one year focusing on Front-End work, I possess a comprehensive understanding of the full software development lifecycle.</p>
                     </div>
-                    <div className="right">
+                    <div className="right" data-aos="fade-left">
                        <div className='portrait' style={{backgroundImage: `url(${portraitImage})`,}}></div>  
                     </div>
                 </div>
                 <div className="skillset">
-                    <div className="left">
+                    <div className="left" data-aos="fade-left">
                         <h1>02</h1>
                         <h2>Skill Set</h2><hr></hr>
                         <p>Check out all of my web development skills.</p>
                     </div>
-                    <div className="right">
+                    <div className="right" data-aos="fade-right">
                         <SkillList />
                     </div>
                 </div>
                 <div className="experience">
-                    <div className="left">
+                    <div className="left" data-aos="fade-right">
                         <h1>03</h1>
                         <h2>Experience</h2><hr></hr>
                         <p>Here is a overview of my career experience.</p>
                     </div>
-                    <div className="right">
+                    <div className="right" data-aos="fade-left">
                         <Timeline />
                     </div> 
                 </div>
-                <div className="contact">
+                <div className="contact" data-aos="fade-right">
                     <h1>04</h1>
                     <h2>Contact Me</h2><hr></hr>
                     <p>Let's keep in touch!</p>
