@@ -113,6 +113,7 @@ const ProjectDetail = () => {
                 ))}
             </div>
             <div className='gallery-showing'>
+            <h3>Project Gallery</h3>
                 {restData.acf && restData.acf['img-gallery'] && restData.acf['img-gallery'].length > 0 ? (
                     <div className="detail-gallery">
                         <Gallery
