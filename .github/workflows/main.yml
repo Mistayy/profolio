@@ -39,4 +39,4 @@ jobs:
           username: profolio@liwenzhuang.com
           password: ${{ secrets.SITEGROUNDPASSWORD }}
           local-dir: /home/runner/work/profolio/profolio/dist/
-          server-dir: /public_html/
+          server-dir: /
