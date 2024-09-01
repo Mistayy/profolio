@@ -16,7 +16,7 @@ function App() {
   
 
   return (
-    <Router basename="/profolio">
+    <Router basename="/">
       <div className="site-wrapper">
         <Header />
         <main id="main">
