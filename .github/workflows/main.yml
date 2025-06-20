@@ -27,7 +27,7 @@ jobs:
       - name: Print Current Directory
         run: |
           pwd
-      # Add a step to list the contents of the directory
+      # Add a step to list the contents of the directory so i can debug
       - name: List Directory Contents
         run: |
           ls -l
